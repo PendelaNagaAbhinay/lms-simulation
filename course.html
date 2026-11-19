@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SELF-OEEE4224M 2026-2027 ODD SEMESTER | KL Learning Management System</title>
+  <meta name="description" content="SELF-OEEE4224M course page with General, INSEM and END SEM quiz activities.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23990000'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3EKL%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/OpenSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="page-course">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="svg-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="kl-red" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#C6202C"></stop>
+        <stop offset=".55" stop-color="#A51219"></stop>
+        <stop offset="1" stop-color="#7E0F16"></stop>
+      </linearGradient>
+
+      <symbol id="kl-logo" viewBox="0 0 209 63">
+        <g fill="none" stroke="#2F2F2F">
+          <circle cx="33" cy="27" r="23" stroke-width="5.5" stroke-dasharray="3 2.4"></circle>
+          <circle cx="33" cy="27" r="19" fill="#fff" stroke-width="1.5"></circle>
+          <circle cx="33" cy="27" r="16.4" stroke-width=".7"></circle>
+        </g>
+        <g fill="#8E1418">
+          <path d="M25 33.5h16l-1.6 3.5H26.6z"></path>
+          <path d="M28 22h2v10h-2zM37 22h2v10h-2z"></path>
+          <path d="M26.5 21.5h14v1.6h-14z"></path>
+          <path d="M29.5 24.5c1.5-2 5.5-2 7 0" fill="none" stroke="#8E1418" stroke-width="1"></path>
+          <path d="M33 14.5v4" stroke="#8E1418" stroke-width="1.2"></path>
+        </g>
+        <path d="M62 8h11v16.5L91.5 8H106L83 29.5 107 50H92.5L73 31.5V50H62z" fill="url(#kl-red)"></path>
+        <path d="M108 8h12v33.5h29V50h-41z" fill="url(#kl-red)"></path>
+        <path d="M73 31.5 92.5 50h-7L73 39z" fill="#7E0F16" opacity=".55"></path>
+        <text x="108" y="59.5" text-anchor="middle" font-family="'Open Sans','Segoe UI',Arial,sans-serif" font-size="5.6" letter-spacing="1.1" fill="#1F1F1F">(DEEMED TO BE UNIVERSITY)</text>
+      </symbol>
+
+      <symbol id="i-bell" viewBox="0 0 16 16"><path d="M8 1.2a4 4 0 0 0-4 4V8L2.4 10.6h11.2L12 8V5.2a4 4 0 0 0-4-4zm0 13.6a1.9 1.9 0 0 0 1.8-1.3H6.2A1.9 1.9 0 0 0 8 14.8z"></path></symbol>
+      <symbol id="i-search" viewBox="0 0 16 16"><circle cx="6.8" cy="6.8" r="4.4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><path d="M10.2 10.2 14.6 14.6" fill="none" stroke="currentColor" stroke-width="2"></path></symbol>
+      <symbol id="i-home" viewBox="0 0 16 16"><path d="M8 1.3 1 7.1h2.1V15h4V9.7h1.8V15h4V7.1H15z"></path></symbol>
+      <symbol id="i-sitemap" viewBox="0 0 16 16"><path d="M6.6 1h2.8v3.2H6.6zM1 6.4h2.8v3.2H1zM6.6 6.4h2.8v3.2H6.6zM12.2 6.4H15v3.2h-2.8zM7.3 4.2h1.4v2.2H7.3zM2.4 9.6h1.2v2.6h8.8V9.6h1.2v3.8H2.4z"></path></symbol>
+      <symbol id="i-page" viewBox="0 0 16 16"><path d="M3.4 1.2h6L13 4.8v10H3.4z" fill="none" stroke="currentColor" stroke-width="1.2"></path><path d="M9.2 1.5v3.4h3.5" fill="none" stroke="currentColor" stroke-width="1.2"></path></symbol>
+      <symbol id="i-chart" viewBox="0 0 16 16"><path d="M1.4 14.2V1.6h1.4v11.2h11.6v1.4z"></path><path d="M4.4 11V7.6h1.8V11zM7.4 11V4.4h1.8V11zM10.4 11V6h1.8v5z"></path></symbol>
+      <symbol id="i-gear" viewBox="0 0 16 16"><path d="M15.9 9.3c.1-.4.1-.9.1-1.3s0-.9-.1-1.3l-2.1-.4c-.1-.4-.3-.8-.5-1.2l1.2-1.8c-.5-.7-1.1-1.3-1.9-1.8l-1.8 1.2c-.4-.2-.8-.4-1.2-.5L9.3.1C8.9 0 8.4 0 8 0s-.9 0-1.3.1l-.4 2.1c-.4.2-.8.3-1.2.5L3.4 1.5C2.6 2 2 2.6 1.5 3.4l1.2 1.8c-.2.3-.3.7-.5 1.1l-2.1.4C0 7.1 0 7.6 0 8s0 .9.1 1.3l2.1.4c.1.4.3.8.5 1.2l-1.2 1.8c.5.7 1.1 1.3 1.9 1.8l1.8-1.2c.4.2.8.4 1.2.5l.4 2.1c.3.1.8.1 1.2.1s.9 0 1.3-.1l.4-2.1c.4-.1.8-.3 1.2-.5l1.8 1.2c.7-.5 1.3-1.1 1.9-1.9l-1.2-1.8c.2-.4.4-.8.5-1.2zM8 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path></symbol>
+      <symbol id="i-caret" viewBox="0 0 8 6"><path d="M0 0l4 6 4-6z"></path></symbol>
+      <symbol id="i-chevron" viewBox="0 0 16 16"><path d="M3.6 5.8 8 10.2l4.4-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+      <symbol id="i-forum" viewBox="0 0 20 20"><path d="M3 3h14v10H8.5L5 16v-3H3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><path d="M6.5 7h7M6.5 9.6h5" stroke="currentColor" stroke-width="1.4"></path></symbol>
+      <symbol id="i-doc" viewBox="0 0 20 20"><path d="M5 2h7l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="1.6"></path><path d="M12 2v4h4" fill="none" stroke="currentColor" stroke-width="1.6"></path><path d="M7.6 10h6M7.6 12.6h6M7.6 15.2h3.6" stroke="currentColor" stroke-width="1.4"></path></symbol>
+      <symbol id="i-quiz" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M6.4 10.2l2.2 2.2 4.8-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+      <symbol id="i-lock" viewBox="0 0 16 16"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="1.4"></path><rect x="3" y="7" width="10" height="7" rx="1" fill="currentColor"></rect></symbol>
+      <symbol id="i-envelope" viewBox="0 0 16 16"><rect x="1.4" y="3" width="13.2" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"></rect><path d="m1.7 3.6 6.3 4.8 6.3-4.8" fill="none" stroke="currentColor" stroke-width="1.3"></path></symbol>
+    </defs>
+  </svg>
+
+  <div class="top-strip" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="user-bar">
+      <svg class="icon user-bar__bell" aria-hidden="true"><use href="#i-bell"></use></svg>
+      <span class="user-bar__name"><span class="js-username">PENDELA NAGA ABHINAY 2300080175</span></span>
+      <a class="user-avatar js-logout" href="index.html" title="Log out" aria-label="P2 — Log out">P2</a>
+    </div>
+    <div class="logo-row">
+      <a href="dashboard.html" aria-label="KL Learning Management System — dashboard">
+        <img class="kl-logo" src="assets/kl.png" width="209" height="63" alt="KL Deemed to be University">
+      </a>
+    </div>
+  </header>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li class="is-active"><a href="dashboard.html" aria-current="page">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="course.html">My courses</a></li>
+        <li class="nav-help">
+          <details>
+            <summary aria-haspopup="true">Help <svg class="caret" aria-hidden="true"><use href="#i-caret"></use></svg></summary>
+            <ul class="help-menu">
+              <li><a href="#">Moodle documentation</a></li>
+              <li><a href="#">Ask your instructor</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+
+      <form class="nav-search" id="course-search" action="#" role="search">
+        <label class="sr-only" for="course-search-input">Search courses</label>
+        <input id="course-search-input" type="search" placeholder="Search courses" autocomplete="off">
+        <button type="submit" aria-label="Search courses">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <main class="container" id="main">
+    <div class="breadcrumb-row">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="dashboard.html">Dashboard</a>
+        <span class="sep" aria-hidden="true">&rsaquo;</span>
+        <a href="course.html">My courses</a>
+        <span class="sep" aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">SELF-OEEE4224M 2026-2027 ODD SEMESTER</span>
+      </nav>
+    </div>
+
+    <div class="page-grid">
+      <div class="main-column">
+        <div class="course-sections">
+
+          <details class="course-section" open>
+            <summary class="section-head">
+              <span class="section-chevron" aria-hidden="true"><svg class="icon"><use href="#i-chevron"></use></svg></span>
+              <h2 class="section-title">General</h2>
+            </summary>
+            <div class="section-body">
+
+              <div class="activity">
+                <span class="activity-tile activity-tile--forum" aria-hidden="true"><svg class="icon"><use href="#i-forum"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Forum</span>
+                      <a class="activity-name" href="#">Announcements</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="announcements">Mark as done</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-doc"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Assignment</span>
+                      <a class="activity-name" href="#">MOOCs Evaluation (Certificate + Test)</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="moocs-evaluation">Mark as done</button>
+                  </div>
+                  <div class="activity-content">
+                    <p class="course-intro">Dear students, all of you must submit the &ldquo; MOOCs Evaluation (Certificate + Test)&rdquo;
+                      <a href="#">https://www.coursera.org/learn/intro-self-driving-cars/</a>
+                      2. <a href="#">https://www.udemy.com/course/applied-deep-learningtm-the-complete-self-driving-car-course/</a>
+                      3. <a href="#">https://www.classcentral.com/course/intro-self-driving-cars-13140</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-doc"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Assignment</span>
+                      <a class="activity-name" href="#">MOOCs Review</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="moocs-review">Mark as done</button>
+                  </div>
+                  <div class="activity-content rubric">
+                    <h3>A. MOOC Course Overview &ndash; 10 Marks</h3>
+                    <ol>
+                      <li>State the title, platform, instructor and duration of the MOOC.</li>
+                      <li>Explain the major objectives of the MOOC.</li>
+                      <li>Explain how the MOOC is related to the Self Driving Cars course.</li>
+                    </ol>
+
+                    <h3>B. Key Concepts Learned &ndash; 15 Marks</h3>
+                    <ol>
+                      <li>Explain any three important concepts learned from the MOOC.</li>
+                      <li>Describe the importance of autonomous driving technology.</li>
+                      <li>Identify two important technical concepts that you learned.</li>
+                    </ol>
+
+                    <h3>C. Hardware &amp; Software &ndash; 15 Marks</h3>
+                    <ol>
+                      <li>Explain the major hardware components of a self-driving car.</li>
+                      <li>Explain the role of the software stack in autonomous vehicles.</li>
+                      <li>Explain how hardware and software work together.</li>
+                    </ol>
+
+                    <h3>D. Sensors, Perception &amp; Localization &ndash; 20 Marks</h3>
+                    <ol>
+                      <li>Explain the role of cameras in autonomous vehicles.</li>
+                      <li>Explain LIDAR and its applications.</li>
+                      <li>Explain GPS/INS and localization.</li>
+                      <li>Explain object detection and semantic segmentation.</li>
+                    </ol>
+                    <p>These areas align with the course syllabus, which includes GNSS/INS, LIDAR, visual perception, 2D object detection and semantic segmentation.</p>
+
+                    <h3>E. Vehicle Modeling, Control &amp; Planning &ndash; 20 Marks</h3>
+                    <ol>
+                      <li>Explain vehicle dynamic modeling.</li>
+                      <li>Explain longitudinal control.</li>
+                      <li>Explain lateral control.</li>
+                      <li>Explain motion planning and behavior planning.</li>
+                    </ol>
+                    <p>These topics are explicitly included in the course syllabus.</p>
+
+                    <h3>F. CARLA / Python / Practical Application &ndash; 10 Marks</h3>
+                    <ol>
+                      <li>Explain how CARLA can be used for an autonomous-vehicle simulation.</li>
+                      <li>Describe one Python-based application demonstrated or learned through the MOOC.</li>
+                    </ol>
+                    <p>CO4 specifically includes CARLA and Python programming.</p>
+
+                    <h3>G. Learning Reflection &ndash; 10 Marks</h3>
+                    <ol>
+                      <li>What were the three most important things you learned?</li>
+                      <li>Which topic was most useful and why?</li>
+                      <li>How can the knowledge gained from this MOOC be applied to self-driving-car development?</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+
+          <details class="course-section" open>
+            <summary class="section-head">
+              <span class="section-chevron" aria-hidden="true"><svg class="icon"><use href="#i-chevron"></use></svg></span>
+              <h2 class="section-title">INSEM</h2>
+            </summary>
+            <div class="section-body">
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <span class="activity-name">INSEM CO-1</span>
+                      <span class="activity-unavailable"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Not available unless: You belong to Missing group</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <span class="activity-name">INSEM CO-2</span>
+                      <span class="activity-unavailable"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Not available unless: You belong to Missing group</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <span class="activity-name">INSEM CO-3</span>
+                      <span class="activity-unavailable"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Not available unless: You belong to Missing group</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <span class="activity-name">INSEM CO-4</span>
+                      <span class="activity-unavailable"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Not available unless: You belong to Missing group</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+
+          <details class="course-section" open>
+            <summary class="section-head">
+              <span class="section-chevron" aria-hidden="true"><svg class="icon"><use href="#i-chevron"></use></svg></span>
+              <h2 class="section-title">END SEM</h2>
+            </summary>
+            <div class="section-body">
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <a class="activity-name" href="quiz.html?quiz=END%20SEM-CO-1&co=CO1">END SEM-CO-1</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="end-sem-co-1">Mark as done</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <a class="activity-name" href="quiz.html?quiz=END%20SEM-CO-2&co=CO2">END SEM-CO-2</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="end-sem-co-2">Mark as done</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <a class="activity-name" href="quiz.html?quiz=END%20SEM-CO-3&co=CO3">END SEM-CO-3</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="end-sem-co-3">Mark as done</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity">
+                <span class="activity-tile" aria-hidden="true"><svg class="icon"><use href="#i-quiz"></use></svg></span>
+                <div class="activity-main">
+                  <div class="activity-head">
+                    <div class="activity-label">
+                      <span class="activity-type">Quiz</span>
+                      <a class="activity-name" href="quiz.html?quiz=END%20SEM-CO-4&co=CO4">END SEM-CO-4</a>
+                    </div>
+                    <button class="btn btn-outline btn-sm js-mark-done" type="button" data-activity="end-sem-co-4">Mark as done</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+
+          <details class="course-section">
+            <summary class="section-head">
+              <span class="section-chevron" aria-hidden="true"><svg class="icon"><use href="#i-chevron"></use></svg></span>
+              <h2 class="section-title">Topic 3</h2>
+            </summary>
+            <div class="section-body"></div>
+          </details>
+
+          <details class="course-section">
+            <summary class="section-head">
+              <span class="section-chevron" aria-hidden="true"><svg class="icon"><use href="#i-chevron"></use></svg></span>
+              <h2 class="section-title">Topic 4</h2>
+            </summary>
+            <div class="section-body"></div>
+          </details>
+
+        </div>
+      </div>
+
+      <aside class="sidebar" aria-label="Navigation sidebar">
+        <section class="block block--nav" aria-labelledby="navigation-title">
+          <div class="block-head">
+            <span class="block-head__icon block-head__icon--orange" aria-hidden="true">
+              <svg class="icon"><use href="#i-sitemap"></use></svg>
+            </span>
+            <h2 class="block-title" id="navigation-title">Navigation</h2>
+          </div>
+          <nav class="block-body side-nav" aria-label="Site navigation">
+            <ul>
+              <li><a class="side-row" href="dashboard.html">Dashboard</a></li>
+              <li>
+                <a class="side-row" href="#">
+                  <span class="side-icon" aria-hidden="true"><svg class="icon"><use href="#i-home"></use></svg></span>
+                  Site home
+                </a>
+              </li>
+              <li>
+                <a class="side-row side-row--branch" href="#">
+                  <span class="side-toggle" aria-hidden="true"></span>
+                  Site pages
+                </a>
+              </li>
+              <li>
+                <a class="side-row side-row--branch side-row--open" href="course.html" aria-expanded="true">
+                  <span class="side-toggle" aria-hidden="true"></span>
+                  My courses
+                </a>
+                <ul>
+                  <li><a class="side-row" href="course.html">icpc2024</a></li>
+                  <li><a class="side-row" href="course.html">ECOLO- 23UC0009 2026-2027 ODD SEMESTER</a></li>
+                  <li>
+                    <a class="side-row side-row--branch side-row--open" href="course.html" aria-expanded="true">
+                      <span class="side-toggle" aria-hidden="true"></span>
+                      SELF-OEEE4224M 2026-2027 ODD SEMESTER
+                    </a>
+                    <ul>
+                      <li>
+                        <a class="side-row" href="#">
+                          <span class="side-icon" aria-hidden="true"><svg class="icon"><use href="#i-page"></use></svg></span>
+                          Participants
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row" href="#">
+                          <span class="side-icon" aria-hidden="true"><svg class="icon"><use href="#i-chart"></use></svg></span>
+                          Competencies
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row" href="#">
+                          <span class="side-icon" aria-hidden="true"><svg class="icon"><use href="#i-chart"></use></svg></span>
+                          Grades
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row side-row--branch" href="course.html">
+                          <span class="side-toggle" aria-hidden="true"></span>
+                          General
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row side-row--branch" href="course.html">
+                          <span class="side-toggle" aria-hidden="true"></span>
+                          INSEM
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row side-row--branch" href="course.html">
+                          <span class="side-toggle" aria-hidden="true"></span>
+                          END SEM
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row side-row--branch" href="course.html">
+                          <span class="side-toggle" aria-hidden="true"></span>
+                          Topic 3
+                        </a>
+                      </li>
+                      <li>
+                        <a class="side-row side-row--branch" href="course.html">
+                          <span class="side-toggle" aria-hidden="true"></span>
+                          Topic 4
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="side-row" href="course.html">ENER-OEEE4222M 2026-2027 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">ECOL-23UC0009 2026-2027 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">INTE-23UC1101 2023-2024 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">ENGI-23CY1001 2026-2027 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">INDI-23UC0008 2026-2027 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">INDU-23IE4051 2026-2027 ODD SEMESTER</a></li>
+                  <li><a class="side-row" href="course.html">EDGE-23CEC3510 2026-2027 ODD SEMESTER</a></li>
+                  <li>
+                    <a class="side-row side-row--branch side-row--marker" href="course.html">
+                      <span class="side-marker" aria-hidden="true"></span>
+                      More...
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="side-row" href="#">
+                  <span class="side-icon" aria-hidden="true"><svg class="icon"><use href="#i-gear"></use></svg></span>
+                  Ticketing
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#">
+      <svg class="icon" aria-hidden="true"><use href="#i-home"></use></svg>
+      www.kluniversity.in
+    </a>
+    <a href="#">
+      <svg class="icon" aria-hidden="true"><use href="#i-envelope"></use></svg>
+      moodle@kluniversity.in
+    </a>
+  </footer>
+</body>
+</html>

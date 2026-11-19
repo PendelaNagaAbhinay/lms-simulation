@@ -1,0 +1,31 @@
+# Reference captures and QA scratch — never shipped
+/reference/
+/scratch/
+/.playwright-mcp/
+*.crop.png
+/analysis/
+.playwright-mcp/
+
+# /assets/ IS SHIPPED: kl.png, klu-banner.jpg and page-bg.png were extracted
+# from the reference capture with the user's approval and are part of the UI.
+
+# Secrets & local environment — never commit
+.env
+.env.*
+
+# Editor / IDE noise
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+*.orig
+*.tmp
+
+# Node / tooling (lighthouse, audit scripts)
+node_modules/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

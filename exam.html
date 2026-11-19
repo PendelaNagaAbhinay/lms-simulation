@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#990000">
+<meta name="color-scheme" content="light">
+<title>END SEM-CO-1 — Safe Exam Browser</title>
+<meta name="description" content="Safe Exam Browser kiosk view for the KLU Moodle quiz simulation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23990000'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3EKL%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/OpenSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="seb.css">
+</head>
+<body class="seb page-exam">
+
+<div class="seb-top-strip" aria-hidden="true"></div>
+
+<header class="seb-topbar">
+  <button type="button" class="seb-back" id="seb-back">Back</button>
+  <div class="seb-timer" id="seb-timer" role="timer" aria-live="off" aria-label="Time remaining">
+    <svg class="seb-timer__icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+      <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+      <path d="M8 4.3V8l2.6 1.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+    </svg>
+    <span class="seb-timer__text" id="seb-timer-text">Time left 30:00</span>
+  </div>
+  <button type="button" class="seb-toolbar__btn seb-topbar__menu" id="seb-menu-btn" aria-label="SEB menu" aria-expanded="false" aria-controls="seb-menu">
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+      <path d="M2 5h16M2 10h16M2 15h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+</header>
+
+<div class="seb-main" id="seb-main">
+  <aside class="quiz-nav" id="quiz-nav" aria-labelledby="quiz-nav-title">
+    <div class="quiz-nav__head">
+      <span class="quiz-nav__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15">
+          <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </span>
+      <h2 class="quiz-nav__title" id="quiz-nav-title">Quiz navigation</h2>
+    </div>
+    <div class="quiz-nav__grid" id="quiz-nav-grid" role="group" aria-label="Jump to question"></div>
+    <button type="button" class="quiz-nav__finish" id="quiz-nav-finish">Finish attempt ...</button>
+  </aside>
+
+  <main class="seb-stage" id="seb-stage">
+    <p class="seb-loading" id="seb-loading">Loading exam&hellip;</p>
+
+    <section class="question-panel" id="screen-attempt" aria-labelledby="q-title" hidden>
+      <div class="question-panel__head">
+        <h2 class="question-panel__title" id="q-title">Question 1</h2>
+        <span class="question-panel__status" id="q-status">Not yet answered</span>
+        <span class="question-panel__marks" id="q-marks">Marked out of 1.00</span>
+        <button type="button" class="question-panel__flag" id="q-flag" aria-pressed="false">
+          <svg class="question-panel__flag-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path d="M3.2 1.6v13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path class="flag-fill" d="M4.2 2.2h8.2l-2.1 3 2.1 3H4.2z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+          </svg>
+          <span id="q-flag-label">Flag question</span>
+        </button>
+      </div>
+      <div class="question-panel__body">
+        <div class="question-text" id="q-text"></div>
+        <div class="question-options" id="q-options" role="radiogroup" aria-labelledby="q-text"></div>
+        <button type="button" class="question-clear" id="q-clear" hidden>Clear my choice</button>
+      </div>
+      <div class="question-nav">
+        <button type="button" class="btn-exam btn-exam--green" id="q-prev">Previous page</button>
+        <button type="button" class="btn-exam btn-exam--green" id="q-next">Next page</button>
+      </div>
+    </section>
+
+    <section class="summary-panel" id="screen-summary" aria-labelledby="summary-title" hidden>
+      <h2 class="summary-title" id="summary-title" tabindex="-1">Summary of attempt</h2>
+      <div class="summary-notice" id="summary-notice" role="status" hidden></div>
+      <div class="summary-table" id="summary-table"></div>
+      <div class="summary-actions">
+        <button type="button" class="btn-exam btn-exam--green" id="summary-return">Return to attempt</button>
+        <button type="button" class="btn-exam btn-exam--red" id="summary-submit">Submit all and finish</button>
+      </div>
+    </section>
+
+    <section class="submitted-panel" id="screen-submitted" aria-labelledby="submitted-title" hidden>
+      <span class="submitted-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30">
+          <path d="M4.5 12.5l5 5 10-11" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <h2 class="submitted-title" id="submitted-title" tabindex="-1">Attempt submitted</h2>
+      <p class="submitted-sub" id="submitted-sub"></p>
+      <div class="submitted-stats" id="submitted-stats"></div>
+      <button type="button" class="submitted-exit" id="seb-exit">Exit Safe Exam Browser</button>
+      <p class="submitted-note">Your answers have been saved.</p>
+    </section>
+
+    <section class="seb-error" id="seb-error" role="alert" hidden>
+      <h2>Unable to load the exam</h2>
+      <p id="seb-error-message">The question bank could not be loaded.</p>
+      <button type="button" class="btn-exam btn-exam--green" id="seb-error-reload">Reload exam</button>
+    </section>
+  </main>
+</div>
+
+<div class="seb-restore" id="seb-restore" role="status" hidden>
+  <span class="seb-restore__text" id="seb-restore-text">Fullscreen is not active. The exam is running in windowed mode.</span>
+  <button type="button" class="seb-restore__btn" id="seb-restore-btn">Return to fullscreen</button>
+  <button type="button" class="seb-restore__close" id="seb-restore-close" aria-label="Dismiss fullscreen notice">&times;</button>
+</div>
+
+<footer class="seb-toolbar">
+  <span class="seb-toolbar__brand" role="img" aria-label="Safe Exam Browser">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+      <circle cx="16" cy="16" r="14" fill="#2E7DBF"></circle>
+      <circle cx="16" cy="16" r="14" fill="none" stroke="#4292BD" stroke-width="1"></circle>
+      <path d="M10.4 8.2c2.3-1.6 5.2-1.7 7.3-.7l-1.1 3.8-3.1.8-.9 2.6-2.8-.9z" fill="#F58233"></path>
+      <path d="M19.7 16.6c2.6-.4 4.7 1.6 4.4 4.1l-3.6 2-2.1-2.3z" fill="#F58233"></path>
+      <path d="M12.3 20.7l2.6 1.5-1.1 3.6-3.3-1.8z" fill="#F58233"></path>
+      <g transform="rotate(-42 16 16)">
+        <circle cx="16" cy="9.4" r="2.8" fill="none" stroke="#6E6E6E" stroke-width="1.9"></circle>
+        <path d="M16 12.4v11.8M16 20.1h3.1M16 22.9h2.4" fill="none" stroke="#6E6E6E" stroke-width="1.9" stroke-linecap="round"></path>
+      </g>
+    </svg>
+  </span>
+  <div class="seb-toolbar__right">
+    <span class="seb-toolbar__battery" role="img" aria-label="Battery charging, 85 percent">
+      <svg viewBox="0 0 28 14" width="28" height="14" aria-hidden="true">
+        <rect x="3" y="1" width="21" height="12" rx="1.5" fill="none" stroke="#333" stroke-width="1.6"></rect>
+        <rect x="5" y="3" width="15" height="8" fill="#2FBF3F"></rect>
+        <rect x="25" y="4.5" width="2.5" height="5" rx="1" fill="#333"></rect>
+        <path d="M1 5h4v4H1z" fill="#333"></path>
+        <path d="M2 4v6M0 5.5h4" fill="none" stroke="#333" stroke-width="1.4"></path>
+        <path d="M12 3.5 9 8h3l-1 3 4-5h-3z" fill="#111"></path>
+      </svg>
+    </span>
+    <span class="seb-toolbar__lang" aria-label="Keyboard language English">ENG</span>
+    <span class="seb-toolbar__clock" id="seb-clock" aria-label="Local time">
+      <span class="seb-clock__time" id="seb-clock-time">00:00</span>
+      <span class="seb-clock__date" id="seb-clock-date">00-00-0000</span>
+    </span>
+    <button type="button" class="seb-toolbar__btn seb-toolbar__btn--power" id="seb-power" aria-label="Quit Safe Exam Browser">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path d="M12 3v8.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M7.1 6.4a8 8 0 1 0 9.8 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="seb-menu" id="seb-menu" hidden>
+    <div class="seb-menu__row">
+      <span class="seb-menu__label">Page Zoom</span>
+      <div class="seb-zoom">
+        <button type="button" class="seb-zoom__btn" id="seb-zoom-out" aria-label="Zoom out">
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+            <circle cx="8.4" cy="8.4" r="5.4" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M12.4 12.4L17 17M6 8.4h4.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <span class="seb-zoom__value" id="seb-zoom-value">100%</span>
+        <button type="button" class="seb-zoom__btn" id="seb-zoom-in" aria-label="Zoom in">
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+            <circle cx="8.4" cy="8.4" r="5.4" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M12.4 12.4L17 17M6 8.4h4.8M8.4 6v4.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="seb-menu__row">
+      <button type="button" class="seb-menu__search-toggle" id="seb-search-toggle" aria-expanded="false" aria-controls="seb-search-box">
+        <span>Search page...</span>
+        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+          <circle cx="8.4" cy="8.4" r="5.4" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M12.4 12.4L17 17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="seb-menu__search" id="seb-search-box" hidden>
+      <input type="search" class="seb-search__input" id="seb-search-input" placeholder="Search page..." aria-label="Search the question text">
+      <p class="seb-search__count" id="seb-search-count" aria-live="polite"></p>
+    </div>
+  </div>
+</footer>
+
+<div class="seb-backdrop seb-backdrop--center seb-backdrop--dim" id="submit-modal" hidden>
+  <div class="seb-modal" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title">
+    <div class="seb-modal__head">
+      <h2 class="seb-modal__title" id="submit-modal-title">Submit all and finish</h2>
+      <button type="button" class="seb-modal__close" id="submit-modal-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="seb-modal__body">
+      <p>Once you submit, you will no longer be able to change your answers for this attempt.</p>
+      <p class="seb-modal__summary" id="submit-modal-summary"></p>
+    </div>
+    <div class="seb-modal__actions">
+      <button type="button" class="btn-exam btn-exam--outline" id="submit-cancel">Cancel</button>
+      <button type="button" class="btn-exam btn-exam--red" id="submit-confirm">Submit</button>
+    </div>
+  </div>
+</div>
+
+<div class="seb-backdrop seb-backdrop--center seb-backdrop--dim" id="leave-modal" hidden>
+  <div class="seb-modal" role="dialog" aria-modal="true" aria-labelledby="leave-title">
+    <div class="seb-modal__head">
+      <h2 class="seb-modal__title" id="leave-title">Leave the exam?</h2>
+      <button type="button" class="seb-modal__close" id="leave-modal-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="seb-modal__body">
+      <p>Your answers are saved. You can return to this attempt from the quiz page.</p>
+    </div>
+    <div class="seb-modal__actions">
+      <button type="button" class="btn-exam btn-exam--outline" id="leave-cancel">Cancel</button>
+      <button type="button" class="btn-exam btn-exam--green" id="leave-confirm">Leave</button>
+    </div>
+  </div>
+</div>
+
+<div class="seb-backdrop seb-backdrop--center seb-backdrop--dim" id="quit-dialog" hidden>
+  <div class="seb-quit" role="dialog" aria-modal="true" aria-labelledby="quit-title">
+    <div class="seb-quit__title" id="quit-title">Quit?</div>
+    <div class="seb-quit__body">
+      <span class="seb-quit__icon" aria-hidden="true">?</span>
+      <p class="seb-quit__message">Do you want to quit SEB?</p>
+    </div>
+    <div class="seb-quit__actions">
+      <button type="button" class="seb-quit__btn" id="quit-yes">Yes</button>
+      <button type="button" class="seb-quit__btn" id="quit-no">No</button>
+    </div>
+  </div>
+</div>
+
+<script src="questions-data.js"></script>
+<script src="app.js" defer></script>
+<script src="exam.js" defer></script>
+</body>
+</html>
