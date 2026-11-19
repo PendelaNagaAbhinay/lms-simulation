@@ -172,7 +172,7 @@ body.seb :is(button, a, input, [tabindex]):focus-visible {
 .quiz-nav__grid {
   display: grid;
   grid-template-columns: repeat(8, 30px);
-  gap: 3px;
+  gap: 4px;
   padding: 12px 10px 8px;
 }
 
@@ -180,20 +180,20 @@ body.seb :is(button, a, input, [tabindex]):focus-visible {
   position: relative;
   width: 30px;
   height: 40px;
-  padding: 0;
+  padding: 5px 0 0;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: #FFFFFF;
-  border: 1px solid #C8C8C8;
-  border-radius: 2px;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
   color: #555555;
   font-size: 12px;
   line-height: 1;
   cursor: pointer;
   transition: background-color 120ms ease, border-color 120ms ease;
 }
-.quiz-nav__cell:hover { background: #E8F4D9; border-color: #C8C8C8; }
+.quiz-nav__cell:hover { background: #E8F4D9; border-color: #C4C4C4; }
 .quiz-nav__cell.is-answered {
   background: linear-gradient(180deg, #FFFFFF 0 50%, #6E6E6E 50% 100%);
   border-color: #6E6E6E;
@@ -230,9 +230,10 @@ body.seb :is(button, a, input, [tabindex]):focus-visible {
   font-size: 13px;
   line-height: 20px;
   text-align: left;
+  text-decoration: underline;
   cursor: pointer;
 }
-.quiz-nav__finish:hover { color: var(--seb-orange-hover); text-decoration: underline; }
+.quiz-nav__finish:hover { color: var(--seb-orange-hover); }
 
 /* --------------------------------------------------------------------------
    Question panel
@@ -1295,7 +1296,7 @@ body > .seb-splash::before {
     grid-template-columns: repeat(8, minmax(0, 1fr));
     padding: 14px 10px 6px;
   }
-  .quiz-nav__cell { width: auto; height: 28px; }
+  .quiz-nav__cell { width: auto; height: 34px; padding-top: 4px; }
 }
 
 @media (max-width: 1023px) {

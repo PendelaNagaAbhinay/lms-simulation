@@ -6,7 +6,8 @@ Source baseline: current workspace (no git repository). Audit date: 2026-11-18.
 
 - Restored the red square (not circular) white-asterisk badge before "Quiz navigation".
 - Changed navigator cells from 32×32 squares to 30×40 tall rectangles so the number sits in the white upper area and the answered gray band fills the bottom half, per `quiz-navigation-reference-1.jpg` / `-2.jpg`.
-- Verified in Chromium: badge 22×22 with 2 px radius, cells 30×40, bottom-half gradient, flag triangle intact, 0 console errors; `test-flow.js` 23/23 green.
+- Refined to the references: numbers now hug the top of each cell (`align-items: flex-start`, 5 px top padding) instead of crossing the white/gray split; grid gap 4 px; 4 px corner radius; border `#C4C4C4`; `Finish attempt ...` permanently underlined with hover only darkening the orange. The 1024–1199 px breakpoint keeps a 34 px-tall cell so the number still clears the gray half.
+- Verified in Chromium at 1366 px and 1100 px: cells 30×40 / 26×34, top-aligned numbers, bottom-half gradient, flag triangle intact, 0 console errors; `test-flow.js` 23/23 and `verify.js` all green.
 
 ## Direct submission result (2026-11-19, fourth pass)
 
