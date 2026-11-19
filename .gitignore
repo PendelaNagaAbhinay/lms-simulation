@@ -1,13 +1,19 @@
 # Reference captures and QA scratch — never shipped
 /reference/
 /scratch/
-/.playwright-mcp/
-*.crop.png
 /analysis/
-.playwright-mcp/
+/.playwright-mcp/
+
+# Stray screenshots dropped in the repo root (assets/ is separate and shipped)
+/*.png
+/*.jpg
+*.crop.png
 
 # /assets/ IS SHIPPED: kl.png, klu-banner.jpg and page-bg.png were extracted
 # from the reference capture with the user's approval and are part of the UI.
+
+# Local agent/tooling config — never shipped
+opencode.json
 
 # Secrets & local environment — never commit
 .env
@@ -24,6 +30,7 @@
 
 # Node / tooling (lighthouse, audit scripts)
 node_modules/
+*.log
 
 # OS noise
 .DS_Store
